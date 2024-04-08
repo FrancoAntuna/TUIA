@@ -1,0 +1,42 @@
+def rango(i: int):
+    x = 0
+    while x < i:
+        yield x
+        x += 1
+        
+
+for x in rango(10):
+    print(x)
+
+def enumerar(lista):
+    x = 0
+    for i in lista:
+        yield (x, i)
+        x += 1
+pass
+
+lista = [10, 6, 4, 6]
+
+enumerado = enumerar(lista)
+print(list(enumerado))
+
+def enumerarRecursion(lista):
+    x = 0
+    for i in lista:
+        yield (x, i)
+        x += 1
+pass
+
+enumerado = enumerarRecursion(lista)
+print(next(enumerado))
+print(next(enumerado))
+
+def zip2(lista1, lista2):
+    largo = min(len(lista1),len(lista2))
+    for i in range(largo):
+        yield lista1[i], lista2[i]
+pass    
+
+for x, y in zip2(lista, lista):
+    print (x,y)
+

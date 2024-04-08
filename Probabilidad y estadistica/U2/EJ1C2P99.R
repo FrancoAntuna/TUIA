@@ -1,0 +1,5 @@
+datos <- read.delim("clipboard")
+class(datos$Proporcion.de.defectos)
+colnames(datos) <- c("Etapa","Frecuencia","Relativa")
+class(datos$Frecuencia)
+pie(datos$Frecuencia, labels = datos$Etapa, main = "Nro. de defectos por etapa")
